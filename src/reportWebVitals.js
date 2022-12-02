@@ -11,3 +11,41 @@ const reportWebVitals = onPerfEntry => {
 };
 
 export default reportWebVitals;
+
+/*
+
+const Container=styled.div`
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    width:500px;
+    height:500px;
+    border:2px solid black;
+    margin-left:36.5%;
+    background-color:lightblue;
+
+`
+
+const FirstChild=styled.div`
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    padding-top:50%;
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

@@ -1,8 +1,9 @@
 import React from 'react';
 import "../App.css"
 import styled from '@emotion/styled';
-import {BrowserRouter as Router,Switch,Route,NavLink} from 'react-router-dom';
+import { BrowserRouter,Routes,Route,NavLink } from 'react-router-dom';
 import PokeList from './PokeList';
+import PokeInfo from './PokeInfo';
 
 
 const Header=styled.div`
@@ -34,22 +35,33 @@ const Layout=styled.div`
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header>
         <Link to="/">Home</Link>
         <Title>POKEDEX</Title>
         <Image src='/pokedex/public/titulo-poke.png' alt=''/>
       </Header>
       <Layout>
-            <PokeList/>
+      
+      <Routes>
 
+        <Route path="/" element={<PokeList/>}/>
+        <Route  path="/PokeInfo/:name" element={<PokeInfo/>}/>
+
+      </Routes>
       </Layout>
-    </Router>
-    
-
+    </BrowserRouter>
   );
 }
 
 export default App;
 //Dentro del layout irian las dos paginas, o sea un import de PokeList, y otro de PokeInfo. 
 //Al layout deberia ponerle un display flex, porque yo quiero me me arme todo alineado al centro
+//<Route path="" element={<PokeInfo/>}></Route>
+
+/*<Routes>
+
+        <Route path="" element={<PokeList/>}/>
+       
+
+      </Routes>*/
