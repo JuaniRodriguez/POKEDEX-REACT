@@ -8,42 +8,67 @@ const Container=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    height:80vh;
+    margin-right:50px;
 `
 const Card=styled.div`
     display:flex;
     justify-content:space-around;
     flex-direction:column;
     width: 400px;
-    background-color: rgba(11, 202, 245, 0.811);
+    background-color:#701A1A;
     border: 1px solid lightgray;
     border-radius: 10px;
     height: 650px;
     box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-
 `
 
-
 const Img=styled.img`
-    max-width:80%;
-    max-height: 80%;
-    padding:5% 5% 0% 5%;
-    margin-left:15%
+    margin-left:auto;
+    margin-right:auto;
+    align-items:center;
+    max-width:600px;
+    max-height:600px;
+    padding:5% 5% 5% 5%;
+    
 `
 
 const Name=styled.h1`
     text-align:center;
-    font-size:50px;
+    font-size:35px;
+    background-color:#52070D;
+    color:#FFCE33;
     border:2px solid black;
     border-radius:25px;
     margin-left:15px;
     margin-right:15px;
     
 `
+
+const Features=styled.div`
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    
+`
+const Feature=styled.div`
+    display:flex;
+    justify-content:space-between;
+    margin-left:15px;
+    margin-right:15px;
+    padding-top:10px;
+
+
+`
+
+
+/*
 const Table=styled.table`
    width:100%;
+   display:flex;
+   justify-content:center;
    
 
    
@@ -51,17 +76,23 @@ const Table=styled.table`
 
 const Tr=styled.tr`
     padding:300px;
+    
     `
     
 const Th=styled.th`
     font-size:30px;
-    text-align:left;
-    padding-left:10px;
+    text-align:center;
     padding-bottom:10px;
+    color:#FFCE33;
 `
 const Td=styled.td`
     font-size:25px;
+    text-align:center;
+    color:#FFCE33;
+    padding-bottom:10px;
+
 `
+*/
 
 
 const PokeInfo=()=> {
@@ -74,22 +105,12 @@ const PokeInfo=()=> {
         //return pokeInfo.sprites.other.dream_world.front_default;
         //console.log(pokeInfo.types);
         const types=pokeInfo.types.map((el)=> 
-            el.type.name + " "
+            el.type.name + " " 
         )
         //console.log(types)
         setPokeState({
-            /*if (pokeInfo.sprites.other.dream_world.front_default !== null) {
-
-                urlImage:pokeInfo.sprites.other.dream_world.front_default
-
-              } else if (pokeInfo.sprites.front_default !== null) {
-
-                    pokeInfo.sprites.front_default
-                    
-              } else {
-                urlImage='../logo.svg'
-            },*/
-            urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : '../logo.svg' ,
+            
+            urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : '/poke-default.png' ,
             height:pokeInfo.height,
             weight:pokeInfo.weight,
             type:[...types]
@@ -115,25 +136,24 @@ const PokeInfo=()=> {
                     <Img src={pokeState.urlImage} alt=""/>
                     <Name>{name}</Name>    
                 
-                <Table>
+            <Features>
+                <Feature>
+                    <h1>Height</h1>
+                    <h1>{pokeState.height}mm</h1>
+                </Feature>
+                <Feature>
+                    <h1>Weight</h1>
+                    <h1>{(pokeState.weight)/10}kg</h1>
+                </Feature>
+                <Feature>
+                    <h1>Type</h1>
+                    <h1>{pokeState.type}</h1>
+                </Feature>
 
-                    <tbody>
-                        <Tr>
-                            <Th>Height:</Th>
-                            <Td>{pokeState.height}mm</Td>
-                        </Tr>
-                        <Tr>
-                            <Th>Weight:</Th>
-                            <Td>{(pokeState.weight)/10}kg</Td>
-                        </Tr>
-                        <Tr>
-                            <Th>Type:</Th>
-                            <Td>{pokeState.type}</Td>
-                        </Tr>
 
-                    </tbody>
 
-                </Table>
+            </Features>
+
 
             </Card>
         </Container>

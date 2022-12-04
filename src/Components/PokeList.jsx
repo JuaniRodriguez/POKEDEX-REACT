@@ -39,6 +39,7 @@ const Row=styled.div`
     justify-content:center;
 
 `
+//margin-right: 70px;
 const Col=styled.div`
     display:flex;
     justify-content:center;
@@ -54,7 +55,11 @@ const Col=styled.div`
     padding-top: 30px;
     padding-bottom: 30px;
     margin-top: 50px;
-    margin-right: 70px;
+    margin-right:40px;
+    
+    &:hover {
+        transform:scale(1.2)
+    }
 
 `
 
@@ -70,6 +75,9 @@ const Li=styled.li`
     border:2px solid black;
     border-radius: 8px;
     text-align:center;
+    &:hover {
+        background-color:black;
+    }
 
 `
 //una funcion que al hacer click en cualquiera de las 58 paginas, haga el fetch de los 20 poke.

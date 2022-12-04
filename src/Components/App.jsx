@@ -11,6 +11,7 @@ const Header=styled.div`
   display:flex;
   justify-content: space-around;
   align-items:center;
+  margin-left:75px;
 
 `;
 
@@ -18,6 +19,7 @@ const Title=styled.h1`
     font-size: 80px;
     font-family: serif;
     color:#580D0D;
+    text-align:center;
 `;
 
 const Image=styled.img`
