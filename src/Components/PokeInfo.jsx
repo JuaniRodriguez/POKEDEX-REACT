@@ -72,7 +72,11 @@ const PokeInfo=()=> {
     const getInfo=async(name)=> {
         const pokeInfo=await getPoke(`https://pokeapi.co/api/v2/pokemon/${name}`);
         //return pokeInfo.sprites.other.dream_world.front_default;
-
+        //console.log(pokeInfo.types);
+        const types=pokeInfo.types.map((el)=> 
+            el.type.name + " "
+        )
+        //console.log(types)
         setPokeState({
             /*if (pokeInfo.sprites.other.dream_world.front_default !== null) {
 
@@ -88,7 +92,7 @@ const PokeInfo=()=> {
             urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : '../logo.svg' ,
             height:pokeInfo.height,
             weight:pokeInfo.weight,
-            //falta type.
+            type:[...types]
 
 
         })
@@ -124,7 +128,7 @@ const PokeInfo=()=> {
                         </Tr>
                         <Tr>
                             <Th>Type:</Th>
-                            <Td></Td>
+                            <Td>{pokeState.type}</Td>
                         </Tr>
 
                     </tbody>

@@ -1,10 +1,11 @@
 import React from 'react';
 import "../App.css"
 import styled from '@emotion/styled';
-import { BrowserRouter,Routes,Route,NavLink } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 import PokeList from './PokeList';
 import PokeInfo from './PokeInfo';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faHome} from "@fortawesome/free-solid-svg-icons"
 
 const Header=styled.div`
   display:flex;
@@ -15,16 +16,20 @@ const Header=styled.div`
 
 const Title=styled.h1`
     font-size: 80px;
-    font-family: 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
-    color:rgb(223,223,12);
+    font-family: serif;
+    color:#580D0D;
 `;
+
 const Image=styled.img`
   width:10%;
 
 `
-const Link=styled(NavLink)`
-  font-size: 20px
-
+const LinkHome=styled(Link)`
+  font-size:35px;
+  color:#FFE033;
+  &:hover {
+    opacity:0.5
+  }
 `
 const Layout=styled.div`
   display:flex;
@@ -37,9 +42,10 @@ function App() {
   return (
     <BrowserRouter>
       <Header>
-        <Link to="/">Home</Link>
+      
+        <LinkHome to="/"><FontAwesomeIcon icon={faHome}/></LinkHome>
         <Title>POKEDEX</Title>
-        <Image src='/pokedex/public/titulo-poke.png' alt=''/>
+        <Image src='/titulo-poke.png' alt=''/>
       </Header>
       <Layout>
       
@@ -55,13 +61,3 @@ function App() {
 }
 
 export default App;
-//Dentro del layout irian las dos paginas, o sea un import de PokeList, y otro de PokeInfo. 
-//Al layout deberia ponerle un display flex, porque yo quiero me me arme todo alineado al centro
-//<Route path="" element={<PokeInfo/>}></Route>
-
-/*<Routes>
-
-        <Route path="" element={<PokeList/>}/>
-       
-
-      </Routes>*/
