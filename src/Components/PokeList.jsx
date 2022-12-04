@@ -104,13 +104,7 @@ const PokeList=() => {
     }
 
 
-/* el saveData.length va en aumento porque en la pagina 58 me tira error ya que no se completan los 19, entonces no existe saveData[19], por eso pongo que lea el saveData[19] solo si el array saveData[19] tiene una longitud mayor a 19, porque caso contrario no tiene nada para leer, y asi con todos.*/ 
-//{saveData.length>0 && saveData[0][0]}
-//<LinkPokes to={`/PokeInfo/${saveData.length>0 && saveData[0][1]}`}>Hola</LinkPokes>
-//<LinkPokes to={`/PokeInfo/${saveData.length>0 && saveData[0][1]}`}>
 
-//el link del LinkPokes no me toma el url, es decir, mandar el url al pokeinfo, pero no es necesario, le puedo mandar el id del poke, y que pokeinfo haga el fetch con ese id. Para eso tengo que modificar lo del object values que me traia nombre y link, para que ahora me traiga nombre e id.
-//console.log(saveData.length>0 && saveData[0][1])
     return (
      <>
         <Main>
