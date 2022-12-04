@@ -29,8 +29,8 @@ const Img=styled.img`
     margin-left:auto;
     margin-right:auto;
     align-items:center;
-    max-width:600px;
-    max-height:600px;
+    max-width:400px;
+    max-height:400px;
     padding:5% 5% 5% 5%;
     
 `
@@ -59,102 +59,55 @@ const Feature=styled.div`
     margin-left:15px;
     margin-right:15px;
     padding-top:10px;
-
-
 `
-
-
-/*
-const Table=styled.table`
-   width:100%;
-   display:flex;
-   justify-content:center;
-   
-
-   
-`
-
-const Tr=styled.tr`
-    padding:300px;
-    
-    `
-    
-const Th=styled.th`
-    font-size:30px;
-    text-align:center;
-    padding-bottom:10px;
-    color:#FFCE33;
-`
-const Td=styled.td`
-    font-size:25px;
-    text-align:center;
-    color:#FFCE33;
-    padding-bottom:10px;
-
-`
-*/
-
 
 const PokeInfo=()=> {
     const {name}=useParams();
-    //console.log(name);
     const [pokeState,setPokeState]=useState("");
 
     const getInfo=async(name)=> {
         const pokeInfo=await getPoke(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        //return pokeInfo.sprites.other.dream_world.front_default;
-        //console.log(pokeInfo.types);
         const types=pokeInfo.types.map((el)=> 
             el.type.name + " " 
         )
-        //console.log(types)
         setPokeState({
             
             urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : '/poke-default.png' ,
             height:pokeInfo.height,
             weight:pokeInfo.weight,
             type:[...types]
-
-
         })
         return pokeState;
     }
 
     useEffect(function() {
-    getInfo(name);
+         getInfo(name);
 
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[pokeState])
 
-  //  getInfo(name).then(results=>console.log(results));
-///"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/250.svg" 
     return (
         <>
         <Container>
             <Card>
+
+                <Img src={pokeState.urlImage} alt=""/>
+                <Name>{name}</Name>    
                 
-                    <Img src={pokeState.urlImage} alt=""/>
-                    <Name>{name}</Name>    
-                
-            <Features>
-                <Feature>
-                    <h1>Height</h1>
-                    <h1>{pokeState.height}mm</h1>
-                </Feature>
-                <Feature>
-                    <h1>Weight</h1>
-                    <h1>{(pokeState.weight)/10}kg</h1>
-                </Feature>
-                <Feature>
-                    <h1>Type</h1>
-                    <h1>{pokeState.type}</h1>
-                </Feature>
-
-
-
-            </Features>
-
-
+                <Features>
+                    <Feature>
+                        <h1>Height</h1>
+                        <h1>{pokeState.height}mm</h1>
+                    </Feature>
+                    <Feature>
+                        <h1>Weight</h1>
+                        <h1>{(pokeState.weight)/10}kg</h1>
+                    </Feature>
+                    <Feature>
+                        <h1>Type</h1>
+                        <h1>{pokeState.type}</h1>
+                    </Feature>
+                </Features>
             </Card>
         </Container>
         </>
