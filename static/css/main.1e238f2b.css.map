@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.1e238f2b.css","mappings":"AAAA,EACE,qBAAsB,CAEtB,QAAS,CADT,SAEF,CAEA,KACE,wBACF,CAEA,GACE,aAAa,CACb,eACF","sources":["index.css"],"sourcesContent":["* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; \n}\n\nbody {\n  background-color: #B90707;\n}\n\nh1 {\n  color:#FFCE33;\n  text-align: left;\n}\n\n"],"names":[],"sourceRoot":""}
