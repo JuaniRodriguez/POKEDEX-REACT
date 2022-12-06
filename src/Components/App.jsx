@@ -24,6 +24,7 @@ const Title=styled.h1`
 
 const Image=styled.img`
   width:10%;
+  background-color:#B90707;
 
 `
 const LinkHome=styled(Link)`
@@ -47,7 +48,7 @@ function App() {
       
         <LinkHome to="/"><FontAwesomeIcon icon={faHome}/></LinkHome>
         <Title>POKEDEX</Title>
-        <Image src='/titulo-poke.png' alt=''/>
+        <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png' alt=''/>
       </Header>
       <Layout>
       

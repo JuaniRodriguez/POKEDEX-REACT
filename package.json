@@ -2,7 +2,7 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://JuaniRodriguez.github.io/POKEDEX-REACT",
+  "homepage": "https://JuaniRodriguez.github.io/POKEDEX-REACT",
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.10.5",
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 import { useEffect, useState } from "react";
 import getPoke from "../poke";
 
-
+/*height:80vh;
+    margin-right:50px;*/
 const Container=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    height:80vh;
     margin-right:50px;
 `
 const Card=styled.div`
@@ -16,10 +16,11 @@ const Card=styled.div`
     justify-content:space-around;
     flex-direction:column;
     width: 400px;
+    height: 600px;
+    margin-top:30px;
     background-color:#701A1A;
     border: 1px solid lightgray;
     border-radius: 10px;
-    height: 650px;
     box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
@@ -72,7 +73,7 @@ const PokeInfo=()=> {
         )
         setPokeState({
             
-            urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : '/poke-default.png' ,
+            urlImage:pokeInfo.sprites.other.dream_world.front_default!==null ? pokeInfo.sprites.other.dream_world.front_default : pokeInfo.sprites.front_default!==null ? pokeInfo.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/600px-Pokebola-pokeball-png-0.png' ,
             height:pokeInfo.height,
             weight:pokeInfo.weight,
             type:[...types]

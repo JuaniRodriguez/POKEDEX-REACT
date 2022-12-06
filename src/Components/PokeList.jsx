@@ -47,9 +47,10 @@ const Col=styled.div`
     width:150px;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
-    background-image:linear-gradient(rgba(5,7,12,0.7),rgba(5,7,12,0.7)), url("./poke-default.png");
-    object-fit: cover;
+    background-image:linear-gradient(rgba(5,7,12,0.7),rgba(5,7,12,0.7)), url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/600px-Pokebola-pokeball-png-0.png");
+    background-size:contain;
     background-repeat: no-repeat;
+    background-position:center;
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
